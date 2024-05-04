@@ -1,4 +1,17 @@
+/* 화면 중앙쯤 오게 하려고 마진주기 */
+body{
+  margin: 100px;
+}
+.profile-group1, .profile-group2{
+  /* 그룹도 부유하게 */
+  float: left;
+  clear:both;
+}
+
+
 .profile-item{
+  /* 왼쪽 기준으로 부유하게 */
+  float: left;
   width: 64px;
   height: 64px;
   margin: 20px;
