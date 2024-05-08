@@ -1,0 +1,100 @@
+:root {
+  --base: "SUIT Variable", sans-serif;
+}
+
+/*부모에 보더박스 주고 상속 받고 하는 거 귀찮아서 이렇게 함*/
+*,
+*::before *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--base);
+}
+
+.avatar {
+  --size: 64px;
+
+  /*html 에서 Figure쓰면 에이전트 스타일 때문에 여백이 생기는데 이거 싫으면 마진 0으로 주면 된다.*/
+  margin: 0;
+  position: relative;
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  img {
+    inline-size: inherit;
+    block-size: inherit;
+    border-radius: 50%;
+  }
+
+  figcaption {
+    --size: 18px;
+    inline-size: var(--size, 18px);
+    block-size: var(--size, 18px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+  }
+}
+
+/*아바타이면서 isonline인거 중첩패턴 잘 알아두기! */
+&.is-online {
+  figcaption {
+    background-color: hsla(110, 100%, 50%, 1);
+  }
+}
+
+/* member layout 멤버 영역 배치 */
+.member {
+  --avata-size: 64px;
+  /* 한 줄에 아바타가 네개 들어오게 하려고 */
+  /* 이 값을 바꾸면 동적으로 유연해진다. */
+  --avata-count: 4;
+  /* 양쪽, 위아래 할당할 여백 */
+  --avata-spacing: 10px;
+  --container-size: calc((var(var(--avata-size))* var(var(--avata-count))+(var(var(--avata-spacing))*(var(var(--avata-count))))));
+
+  /* calc(100px + 200px) -> 300px이 된다. 주의할 점 : 연산자 앞 뒤에 반드시 공백이 있어야 한다. */
+
+      /* 아바타 하나 + 아바타 여백을 합쳐서 네개가 들어올 수 있는 컨테이너 */
+      /* inline-size: 338px; */
+      /* 2는 보더 */
+      /* inline-size: calc(64*4+80+2); */
+      inline-size: var(--container-size); 
+      /* 전체 크기가 아바타 4개를 포함할 수 있을만큼 충분한 면적이어야 레이아웃이 안 무너진다. */
+
+      /* 위아래도 auto 한다고 해도 중앙으로 가진 않음. 높이는 오토주면 0으로 인식 */
+      margin: 0 auto;
+      border: 1px solid red;
+
+      ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+      margin: 0;
+      /* li 여기다가도 해도 되지만 굳이 뎁스를 깊게 가져갈 필요는 x */
+      /* 플롯된 li 인식해야되니까 디스플레이 설정 */
+      display: flow-root;
+      }
+
+    li{
+      margin: 10px;
+      /* li가 플롯되면서 라인 박스를 유지하면서 배치되어야 한다.*/
+      float: left;
+    }
+}
+
+  @supports(display: flex){
+    .member{
+      ul{
+        display: flex;
+        /* 오버 플로 발생하면 줄바꿈 시켜줘라! */
+        /* 남자가 먼저 나왔으면 좋겠음 - (여자그룹 남자그룹 묶어놧는뎅ㅎㅎ) */
+        flex-flow: row wrap;
+      }
+      li{
+        /* 플롯이었던 li 먼저 되돌려놔야함! */
+        float:none;
+      }
+    }
+  }
