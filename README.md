@@ -1,6 +1,14 @@
 # homework
 테킷 프론트엔드 스쿨 10기 과제 저장소    
 
+---
+NAVER 과제   
+   
+HTML 🔧 : [naver.html](https://github.com/A-Jamong/homework/blob/main/naver/naver.html)
+
+CSS 🖍️ : [naver.css](https://github.com/A-Jamong/homework/blob/main/naver/naver.css)   
+   
+MD 📙 : [naver.md](https://github.com/A-Jamong/homework/blob/main/naver/naver.md)
 
 
 
