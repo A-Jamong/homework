@@ -1,1 +1,20 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root{
+  --font-size: 1rem;
+  --primary-color: #181818;
+}
+body{
+  font-size: var(--font-size);
+}
+
+/* 768미만 모바일 */
+@media (max-width: 767px){
+  body{
+    /* background: blue; */
+  }
+}
+/* 768이상 데스크탑 */
+@media(min-width: 768px) {
+  body{
+    /* background: pink; */
+  }
+}
