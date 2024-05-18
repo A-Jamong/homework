@@ -1,0 +1,73 @@
+@import url(/apple/styles/theme.css);
+@import url(/apple/styles/reset.css);
+@import url(/apple/styles/base.css);
+
+.card{
+  display: flex; 
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: var(--small-spacing);
+  padding-top: var(--extra-large-spacing);
+  
+  height: var(--size);
+  background-image: url(/apple/products/ipad_air_wide.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* 제목 */
+.title-main{
+  font-size: var(--large-text);
+  color: var(--white);
+  @media (min-width:1024px) {
+    font-size: var(--extra-large-text)  ;
+  }
+}
+/* 부제목 */
+.title-sub{
+  font-size: var(--base-text);
+  color: var(--white);
+  margin-bottom: var(--x-small-spacing);
+  @media (min-width:1024px) {
+    font-size: var(--medium-text);
+  }
+}
+/* 출시일 */
+.title-release{
+  font-size: var(--small-text);
+  color: var(--gray);
+  @media (min-width:1024px) {
+    
+  }
+}
+
+/* 버튼 */
+.btn{
+  border-radius: 20px; 
+  padding: var(--x-small-spacing);
+  font-size: var(--xx-small-text);
+  @media (min-width:1024px) {
+    font-size: var(--x-small-text);
+  }
+}
+.btn-more{
+  background-color: var(--blue-400);
+  border: 1px solid var(--blue-400);
+  color: var(--white);
+}
+.btn-more:hover{
+  background-color: var(--blue-100);
+  border: 1px solid var(--blue-100);
+}
+
+.btn-price{
+  color: var(--blue-400);
+  background-color: transparent;
+  border: 1px solid var(--blue-300);
+}
+.btn-price:hover{
+  background-color: var(--blue-400);
+  border: 1px solid var(--blue-400);
+  color: var(--white);
+}

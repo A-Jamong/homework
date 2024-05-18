@@ -4,11 +4,11 @@
 ---
 APPLE 과제   
    
-HTML 🔧 : [apple.html]()
+HTML 🔧 : [apple.html](https://github.com/A-Jamong/homework/blob/main/apple/apple.html)
 
-CSS 🖍️ : [apple.css]()   
+CSS 🖍️ : [apple.css](https://github.com/A-Jamong/homework/blob/main/apple/styles/apple.css)   
    
-MD 📙 : [apple.md]()
+MD 📙 : [apple.md](https://github.com/A-Jamong/homework/blob/main/apple/apple.md)
 
 
 
